@@ -295,8 +295,8 @@ class Ripper(threading.Thread):
         if args.flat:
             self.mp3_file = os.path.join(base_dir, artist + " - " + track_name + ".mp3").encode('ascii', 'ignore')
         elif args.Flat:
-            filled_idx = str(idx).zfill(self.idx_digits)
-            self.mp3_file = os.path.join(base_dir, filled_idx + " - " + artist + " - " + track_name + ".mp3").encode('ascii', 'ignore')
+            filled_idx = str(idx).zfill(3) #self.idx_digits
+            self.mp3_file = os.path.join(base_dir, self.current_playlist.name, filled_idx + " - " + artist + " - " + track_name + ".mp3").encode('ascii', 'ignore')
         else:
             self.mp3_file = os.path.join(base_dir, artist, album, artist + " - " + track_name + ".mp3").encode('ascii', 'ignore')
 
